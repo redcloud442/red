@@ -15,7 +15,7 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entryPoints.websecure.address=:443"
       - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
-      - "--certificatesresolvers.myresolver.acme.email=adminuser@redful.xyz"
+      - "--certificatesresolvers.myresolver.acme.email=adminuser@pinkful.website"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
@@ -32,7 +32,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.services.web.loadbalancer.server.port=8080"
-      - "traefik.http.routers.red-app.rule=Host(`redful.xyz`)"
+      - "traefik.http.routers.red-app.rule=Host(`pinkful.website`)"
       - "traefik.http.routers.red-app.entrypoints=websecure"
       - "traefik.http.routers.red-app.tls.certresolver=myresolver"
       - "com.centurylinklabs.watchtower.enable=true"
