@@ -47,7 +47,12 @@ export async function updateSession(request: NextRequest) {
     return addSecurityHeaders(response);
   }
 
-  const publicRoutes = ["/auth/login", "/auth/register", "/api/auth"];
+  const publicRoutes = [
+    "/auth/login",
+    "/auth/register",
+    "/api/auth",
+    "/api/health",
+  ];
   const privateRoutes = ["/", "/dashboard", "/api/auth", "/admin"];
   const currentPath = request.nextUrl.pathname;
 
