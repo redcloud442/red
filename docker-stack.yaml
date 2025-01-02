@@ -30,17 +30,17 @@ services:
       - databaseUrl
       - directUrl
       - supabaseUrl
-      - anon
+      - anonKey
       - cryptokey
-      - role
+      - serviceRoleKey
     environment:
       - DATABASE_URL=/run/secrets/databaseUrl
       - DIRECT_URL=/run/secrets/directUrl
       - NEXT_PUBLIC_SUPABASE_URL=/run/secrets/supabaseUrl
-      - NEXT_PUBLIC_SUPABASE_ANON_KEY=/run/secrets/anon
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=/run/secrets/anonKey
       - NEXT_PUBLIC_BASE_URL=https://pinkful.website
       - NEXT_PUBLIC_CRYPTO_SECRET_KEY=/run/secrets/cryptokey
-      - SUPABASE_SERVICE_ROLE_KEY=/run/secrets/role
+      - SUPABASE_SERVICE_ROLE_KEY=/run/secrets/serviceRoleKey
     deploy:
       mode: replicated
       replicas: 3
@@ -49,7 +49,6 @@ services:
 
 volumes:
   letsencrypt:
-
 secrets:
   databaseUrl:
     external: true
