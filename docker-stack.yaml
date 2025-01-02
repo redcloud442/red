@@ -23,7 +23,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.services.red-app.loadbalancer.server.port=8080"
-      - "traefik.http.routers.red-app.rule=Host(`redful.xyz`)"
+      - "traefik.http.routers.red-app.rule=Host(`pinkful.website`)"
       - "traefik.http.routers.red-app.entrypoints=websecure"
       - "traefik.http.routers.red-app.tls.certresolver=myresolver"
     secrets:
@@ -38,7 +38,7 @@ services:
       - DIRECT_URL=/run/secrets/directUrl
       - NEXT_PUBLIC_SUPABASE_URL=/run/secrets/supabaseUrl
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=/run/secrets/anon
-      - NEXT_PUBLIC_BASE_URL=https://redful.xyz
+      - NEXT_PUBLIC_BASE_URL=https://pinkful.website
       - NEXT_PUBLIC_CRYPTO_SECRET_KEY=/run/secrets/cryptokey
       - SUPABASE_SERVICE_ROLE_KEY=/run/secrets/role
     deploy:
